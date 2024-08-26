@@ -1,2 +1,2 @@
-psn = input("anjay gimang guys")
-print(psn.lower())
+txt = input() .lower()
+print(txt)
