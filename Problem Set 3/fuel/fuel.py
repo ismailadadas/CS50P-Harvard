@@ -1,9 +1,24 @@
-x = "anjay"
+while True:
+    fuel = input("Fraction: ")
+    try:
+        numerator, denominator = fuel.split("/")
 
-def myfunc():
-    x = "gimang"
-    print("hehe" , x)
-myfunc()
+        new_numerator = int(numerator)
+        new_denominator = int(denominator)
 
-print("emang ea" , x)
-    
+        f = new_numerator / new_denominator
+
+        if 0 <= f <= 1:
+            break
+    except (ValueError, ZeroDivisionError):
+        pass
+
+# Round the fraction to the nearest whole number before converting it to an integer
+p = round(f * 100)
+
+if p <= 1:
+    print("E")
+elif p >= 99:
+    print("F")
+else:
+    print(f"{p}%")
