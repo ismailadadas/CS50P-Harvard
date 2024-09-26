@@ -1,3 +1,15 @@
-h = "ini ngetest doang ya ges ya ixiixixi huehuek"
-j = "upload ngasal hahah hihihi "
-print(h) 
+import inflect 
+
+p = inflect.engine()
+
+names = []
+
+while True : 
+    try: 
+        name = input("Name:")
+        names.apppend(name)
+    except EOFError:
+        print()
+        break
+output = p.join(names)
+print("Audieu , audieu, to " + output) 
