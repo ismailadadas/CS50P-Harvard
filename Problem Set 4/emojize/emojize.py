@@ -1,7 +1,7 @@
 import emoji
 
-user_answer = input("input: ")
+answer = input("input: ")
 
-output = emoji.emojize(user_answer)
+emoji = emoji.emojize(answer, language='alias')
 
-print("Output:",output)
+print("Output:", emoji)
