@@ -1,30 +1,33 @@
-import sys 
-from pyfiglet import Figlet 
+import sys
+import random
+from pyfiglet import Figlet
 
-Figlet = Figlet() 
+def main():
+    # Initialize the Figlet object
+    figlet = Figlet()
 
-if len(sys.argv) == 1:
-    isRandomFont = True
+    # Get the list of available fonts
+    available_fonts = figlet.getFonts()
 
-elif len(sys.argv) == 3 and (sys.argv[1] == "-f" or sys.argv[1] == "--font"): 
-    isRandomFont = False
-else:
-    sys.exit(1) 
+    # Check if the user provided 0 or 2 command-line arguments
+    if len(sys.argv) == 1:
+        # No font specified, use a random font
+        font = random.choice(available_fonts)
+    elif len(sys.argv) == 3 and (sys.argv[1] == '-f' or sys.argv[1] == '--font'):
+        # Check if the specified font is valid
+        font = sys.argv[2]
+        if font not in available_fonts:
+            sys.exit("Invalid usage: Font not found")
+    else:
+        # Invalid usage, exit with error message
+        sys.exit("Invalid usage: Use 0 or 2 command-line arguments")
 
-msg = input("Input: ")
+    # Prompt the user for input text
+    user_input = input("Input text: ")
 
-figlet.getFonts()
+    # Set the desired font and render the text
+    figlet.setFont(font=font)
+    print(figlet.renderText(user_input))
 
-if isRandomFont == False:
-    try: 
-        figlet.setFont(font=sys.argv[2])
-        print(figlet.renderText(msg))
-    except:
-        print("Invalid Usage")
-        sys.exit(1)
-else: 
-    font = random.choice(figlet.getFonts())
-
-msg = input("Input: ")
-
-print(f"Output: {figlet.renderText(msg)}")
+if __name__ == "__main__":
+    main()
