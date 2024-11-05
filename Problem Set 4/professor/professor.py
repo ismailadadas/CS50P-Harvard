@@ -32,5 +32,9 @@ def generate_integer(level):
         x = random.random.randint(100,999)
         y = random.random.randint(100,999)
 
+        Test 1 2 3 
+
+        Anjay
+
 if __name__ == "__main__":
     main() 
