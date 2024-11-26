@@ -36,5 +36,6 @@ def generate_integer(level):
 
         Anjay test 123 94
 
+        Test 1 2 3 
 if __name__ == "__main__":
     main() 
