@@ -1,9 +1,12 @@
 import random
+# This brings in Python's built-in random module so we can generate random numbers
 
 def main():
+    # def main() itu main function / main function, where the program starts running
     score = 0
+    # bikin variable score to count how many answers you get right
     level = get_level()
-
+    # We call the function get_level() to ask the user to choose difficulty (Level 1, 2, or 3).
     for _ in range(10):
         x = generate_integer(level)
         y = generate_integer(level)
@@ -48,4 +51,4 @@ def generate_integer(level):
 
 
 if __name__ == "__main__":
-    main()
+    main() 
